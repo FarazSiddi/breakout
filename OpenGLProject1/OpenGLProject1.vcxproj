@@ -148,6 +148,8 @@
     <ClCompile Include="text_renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.gitignore" />
+    <None Include="..\README.md" />
     <None Include="four.lvl" />
     <None Include="frag.fs" />
     <None Include="one.lvl" />
