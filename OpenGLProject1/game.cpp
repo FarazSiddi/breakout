@@ -35,7 +35,7 @@ void Game::Init()
     // load shaders
     ResourceManager::LoadShader("shaders/sprite.vs", "shaders/sprite.fs", nullptr, "sprite");
     ResourceManager::LoadShader("shaders/particle.vs", "shaders/particle.fs", nullptr, "particle");
-    ResourceManager::LoadShader("shaders/post_processing.vs", "shaders/post_processing.frag", nullptr, "postprocessing");
+    ResourceManager::LoadShader("shaders/post_processing.vs", "shaders/post_processing.fs", nullptr, "postprocessing");
     // configure shaders
     glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(this->Width),
         static_cast<float>(this->Height), 0.0f, -1.0f, 1.0f);
@@ -132,18 +132,19 @@ void Game::Render()
 {
     if (this->State == GAME_ACTIVE)
     {
-        // draw background
-        Texture2D myTexture;
-        myTexture = ResourceManager::GetTexture("background");
-        Renderer->DrawSprite(myTexture, glm::vec2(0.0f, 0.0f), glm::vec2(this->Width, this->Height), 0.0f);
-        // draw level
-        this->Levels[this->Level].Draw(*Renderer);
-        // draw player
-        Player->Draw(*Renderer);
-        // draw particles	
-        Particles->Draw();
-        // draw ball
-        Ball->Draw(*Renderer);
+        Effects->BeginRender();
+            // draw background
+            Texture2D myTexture;
+            myTexture = ResourceManager::GetTexture("background");
+            Renderer->DrawSprite(myTexture, glm::vec2(0.0f, 0.0f), glm::vec2(this->Width, this->Height), 0.0f);
+            // draw level
+            this->Levels[this->Level].Draw(*Renderer);
+            // draw player
+            Player->Draw(*Renderer);
+            // draw particles	
+            Particles->Draw();
+            // draw ball
+            Ball->Draw(*Renderer);
         // end rendering to postprocessing framebuffer
         Effects->EndRender();
         // render postprocessing quad
