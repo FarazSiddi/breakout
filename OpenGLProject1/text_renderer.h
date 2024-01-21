@@ -40,4 +40,4 @@ private:
     unsigned int VAO, VBO;
 };
 
-#endif #pragma once
+#endif

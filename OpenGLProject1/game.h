@@ -41,6 +41,7 @@ const float BALL_RADIUS = 12.5f;
 class Game
 {
 public:
+    bool KeysProcessed[1024];
     // game state
     GameState               State;
     bool                    Keys[1024];
@@ -48,6 +49,7 @@ public:
     std::vector<GameLevel>  Levels;
     std::vector<PowerUp>    PowerUps;
     unsigned int            Level;
+    unsigned int            Lives;
     // constructor/destructor
     Game(unsigned int width, unsigned int height);
     ~Game();
