@@ -1,2 +1,2 @@
 # Breakout
-Followed via the LearnOpenGl website.
+Followed via the LearnOpenGL website.
