@@ -64,4 +64,4 @@
 
 *.cpp linguist-detectable=true
 *.c linguist-detectable=false
-*stb_image.h linguist-detectable=false
+*OpenGLProject1/stb_image.h linguist-detectable=false
