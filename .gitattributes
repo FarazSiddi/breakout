@@ -62,5 +62,5 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-*.cpp linguist-detectable=true
+*.c++ linguist-detectable=true
 *.c linguist-detectable=false
